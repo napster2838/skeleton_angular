@@ -13,22 +13,6 @@ var passportConf  = require('../config/passport');
 
 module.exports.controller = function(app) {
 
-  /**
-   * GET /dashboard
-   * Render Dashboard Page
-   */
-
-  app.get('/dashboard', passportConf.isAuthenticated, passportConf.isAdministrator, function(req, res) {
-    User.count({}, function(err, count) {
-      if (err) {
-        return (err, null);
-      }
-      res.render('admin/dashboard', {
-        url: '/administration',  // to set navbar active state
-        accounts: count
-      });
-    });
-  });
 
   /**
    * GET /accounts

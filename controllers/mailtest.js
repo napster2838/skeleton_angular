@@ -20,7 +20,7 @@ module.exports.controller = function(app) {
 
     //user must be be an administrator
     if (req.user.type !== 'admin') {
-      return res.redirect('/api');
+      return res.redirect('/dashboard');
     }
 
     res.render('mail/welcome', { // <- What template do you want to test?

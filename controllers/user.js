@@ -26,7 +26,7 @@ module.exports.controller = function (app) {
   app.get('/login', function (req, res) {
     if (req.user) {
       req.flash('info', { msg: 'You are already logged in silly!' });
-      return res.redirect('/api');
+      return res.redirect('/dashboard');
     }
     // Turn off login form if too many attempts
     var tooManyAttempts = req.session.tooManyAttempts || false;
@@ -168,7 +168,7 @@ module.exports.controller = function (app) {
               delete req.session.attemptedURL;
               res.redirect(redirectURL);
             } else {
-              res.redirect('/api');
+              res.redirect('/dashboard');
             }
 
           });
@@ -323,7 +323,7 @@ module.exports.controller = function (app) {
           return res.redirect('back');
         }
         req.flash('info', { msg: 'Welcome. Your account verification is completed!' });
-        res.redirect('/api');
+        res.redirect('/dashboard');
       });
 
       // WORKFLOW COMPLETED
@@ -589,7 +589,7 @@ module.exports.controller = function (app) {
           return res.redirect('back');
         }
         req.flash('info', { msg: 'Thanks for signing up! You rock!' });
-        res.redirect('/api');
+        res.redirect('/dashboard');
       });
 
       // WORKFLOW COMPLETED
@@ -796,7 +796,7 @@ module.exports.controller = function (app) {
           return next(err);
         }
         req.flash('info', { msg: 'Thanks for signing up! You rock!' });
-        res.redirect('/api');
+        res.redirect('/dashboard');
       });
 
     });
@@ -856,7 +856,7 @@ module.exports.controller = function (app) {
                 delete req.session.attemptedURL;
                 return res.redirect(redirectURL);
               } else {
-                return res.redirect('/api');
+                return res.redirect('/dashboard');
               }
 
             });
@@ -933,7 +933,7 @@ module.exports.controller = function (app) {
                 delete req.session.attemptedURL;
                 return res.redirect(redirectURL);
               } else {
-                return res.redirect('/api');
+                return res.redirect('/dashboard');
               }
 
             });
@@ -1010,7 +1010,7 @@ module.exports.controller = function (app) {
                 delete req.session.attemptedURL;
                 return res.redirect(redirectURL);
               } else {
-                return res.redirect('/api');
+                return res.redirect('/dashboard');
               }
 
             });
@@ -1087,7 +1087,7 @@ module.exports.controller = function (app) {
                 delete req.session.attemptedURL;
                 return res.redirect(redirectURL);
               } else {
-                return res.redirect('/api');
+                return res.redirect('/dashboard');
               }
 
             });

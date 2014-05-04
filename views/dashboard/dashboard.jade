@@ -1,0 +1,23 @@
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+  title
+  meta(name='description', content='')
+  meta(name='viewport', content='width=device-width')
+  body(ng-app='myApp')
+
+    .navbar
+      .navbar-inner
+        a.brand(href='/') My Dashboard
+    .container(ng-view='ng-view')
+    //
+       vendor scripts 
+    script(src='/lib/angular/angular.min.js')
+
+    script(src='/client/app.js')
+    script(src='/client/controllers.js')
+    script(src='/client/directives.js')
+    script(src='/client/filters.js')
+    script(src='/client/services.js')
+
+
